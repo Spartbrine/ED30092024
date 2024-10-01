@@ -32,5 +32,6 @@ export const routes: Routes = [
   {
     path:'ejercicio7',
     loadComponent: () => import('./components/ejercicio7/ejercicio7.component').then(m => m.Ejercicio7Component)
-  }
+  },
+  { path: '**', redirectTo: '' }  // Redirecciona a la home si no encuentra la ruta
 ];

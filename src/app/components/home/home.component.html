@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h1>Bienvenido a la Práctica de Arreglos</h1>
+    <p class="lead">Selecciona uno de los ejercicios para empezar</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let exercise of exercises">
+      <div class="card mb-4">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ exercise.title }}</h5>
+          <p class="card-text">{{ exercise.description }}</p>
+          <a [routerLink]="exercise.link" class="btn btn-primary">Ir al Ejercicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

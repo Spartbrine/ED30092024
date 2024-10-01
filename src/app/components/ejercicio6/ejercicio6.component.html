@@ -1,1 +1,29 @@
-<p>ejercicio6 works!</p>
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">Ejercicio 6: Resumen de Ventas</div>
+    <div class="card-body">
+      <button class="btn btn-primary mb-3" (click)="initializeSales()">Generar Ventas</button>
+      <div *ngIf="sales.length > 0">
+        <table class="table table-bordered">
+          <tr>
+            <th>Día de la semana</th>
+            <th *ngFor="let day of days">{{ day }}</th>
+          </tr>
+          <tr *ngFor="let month of months; let i = index">
+            <td>{{ month }}</td>
+            <td *ngFor="let day of sales[i]">{{ day }}</td>
+          </tr>
+        </table>
+
+        <h5>Resultados:</h5>
+        <p>Menor venta: {{ minSale }} realizada en {{ minSaleDay }} de {{ minSaleMonth }}</p>
+        <p>Mayor venta: {{ maxSale }} realizada en {{ maxSaleDay }} de {{ maxSaleMonth }}</p>
+        <p>Venta total: {{ totalSales }}</p>
+        <p>Venta por día:</p>
+        <ul>
+          <li *ngFor="let day of days; let i = index">{{ day }}: {{ daySales[i] }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

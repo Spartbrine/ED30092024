@@ -1,1 +1,35 @@
-<p>ejercicio7 works!</p>
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">Ejercicio 7: Resumen de Calificaciones</div>
+    <div class="card-body">
+      <button class="btn btn-primary mb-3" (click)="initializeGrades()">Generar Calificaciones</button>
+      <div *ngIf="grades.length > 0">
+        <table class="table table-bordered">
+          <tr>
+            <th>Alumno</th>
+            <th *ngFor="let parcial of parciales">{{ parcial }}</th>
+          </tr>
+          <tr *ngFor="let grade of grades; let i = index">
+            <td>Alumno {{ i + 1 }}</td>
+            <td *ngFor="let score of grade">{{ score }}</td>
+          </tr>
+        </table>
+
+        <h5>Resultados:</h5>
+        <p>Promedio de cada alumno: {{ averages }}</p>
+        <p>Promedio más alto: {{ maxAverage.toFixed(2) }}</p>
+        <p>Promedio más bajo: {{ minAverage.toFixed(2) }}</p>
+        <p>Total de parciales reprobados: {{ failedExams.toFixed(2) }}</p>
+
+        <h5>Distribución de calificaciones:</h5>
+        <ul>
+          <li>5.0 – 5.9: {{ distribution[0].toFixed(2) }} Alumnos</li>
+          <li>6.0 – 6.9: {{ distribution[1].toFixed(2) }} Alumnos</li>
+          <li>7.0 – 7.9: {{ distribution[2].toFixed(2) }} Alumnos</li>
+          <li>8.0 – 8.9: {{ distribution[3].toFixed(2) }} Alumnos</li>
+          <li>9.0 – 10: {{ distribution[4].toFixed(2) }} Alumnos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

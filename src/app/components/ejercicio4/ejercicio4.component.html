@@ -1,1 +1,19 @@
-<p>ejercicio4 works!</p>
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">Ejercicio 4: Matriz con 1's en la diagonal y 0's</div>
+    <div class="card-body">
+      <div class="form-group mb-3">
+        <label for="matrixSize">Tamaño de la matriz cuadrada</label>
+        <input type="number" [(ngModel)]="size" class="form-control" placeholder="Ej: 4" (change)="generateMatrix()">
+      </div>
+      <div *ngIf="matrix.length > 0">
+        <h5>Matriz resultante:</h5>
+        <table class="table table-bordered">
+          <tr *ngFor="let row of matrix">
+            <td *ngFor="let cell of row">{{ cell }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
